@@ -1,0 +1,272 @@
+.book {
+	
+	margin: 0px 0px 20px 0px;
+	@media (max-width: $md3+px) {
+		margin: 10px 0px 20px 0px;
+	}
+	// .book__content
+
+	&__content {
+	}
+
+	// .book__body
+
+	&__body {
+		
+	}
+
+}
+
+.breadcrumbs {
+	margin: 0px 0px 9px 0px;
+	border: 1px solid #dedede;
+	border-radius: 4px;
+	// .breadcrumbs__list
+
+	&__list {
+		display: flex;
+		overflow-x: auto;
+		white-space: nowrap;
+		li {
+		
+		display: inline-block;
+		font-family: "SegoeWP";
+		margin: 0px 20px 0px 0px;
+		padding: 8px 16px;
+		color: #a6a6a6;
+		font-size: 16px;
+		position: relative;
+		&::after{
+			content: '\00BB';
+			position: absolute;
+			font-size: 22px;
+			line-height: 0;
+			top: 45%;
+			right: -10px;
+		}
+		&:last-child {
+			&::after{
+				content: none;
+				
+			}
+		}
+		}
+		
+	}
+
+	// .breadcrumbs__link
+
+	&__link {
+		
+		color: #a6a6a6;
+		
+		
+	}
+}
+.book-info {
+	position: relative;
+	display: flex;
+	padding: 28px 30px;
+	border: 1px solid #dedede;
+	border-radius: 4px;
+	@media (max-width: 860px) {
+		flex-direction: column;
+		align-items: center;
+	}
+	// .book-info__instock
+
+	&__instock {
+		position: absolute;
+		z-index: 2;
+		background-color: #fff;
+		border-radius: 17px;
+		padding: 3px;
+		right: 26px;
+		top: 28px;
+		width: 47px;
+		height: 33px;
+		img{
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	// .book-info__image
+	
+	&__image {
+		flex: 0 0 250px;
+		height: 390px;
+		position: relative;
+		img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+		@media (max-width: 860px) {
+			flex: 0 0 220px;
+			width: 150px;
+			margin: 0px 0px 10px 0px;
+		}
+	}
+
+	// .book-info__body
+
+	&__body {
+		flex: 1 1 auto;
+		margin: 0px 0px 0px 45px;
+		@media (max-width: 860px) {
+			margin: 0px 0px 0px 0px;
+		}
+	}
+}
+.body-book-info {
+
+	// .body-book-info__title
+
+	&__title {
+		margin: 0px 0px 25px 0px;
+		font-family: "SegoeWP";
+		font-size: 41px;
+		font-weight: 300;
+		color: #595959;
+		@media (max-width: 860px) {
+			text-align: center;
+			margin: 0px 0px 15px 0px;
+		}
+	}
+
+	// .body-book-info__text
+
+	&__text {
+		font-family: "SegoeWP";
+  		font-size: 16px;
+		line-height: 1.63;
+		color: #7e7e7e;
+		margin: 0px 0px 24px 0px;
+	}
+
+	// .body-book-info__price
+
+	&__price {
+		border: 1px solid #dedede;
+		padding: 15px 20px;
+	}
+}
+.price-book-info {
+
+	// .price-book-info__price
+
+	&__price {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 0px 6px 30px 6px;
+		border-bottom: 1px solid #dedede;
+		@media (max-width: 650px) {
+			flex-direction: column;
+		}
+	}
+
+	// .price-book-info__item
+
+	&__item {
+		
+		
+	}
+
+	// .price-book-info__item-price
+
+	&__item-price {
+		display: inline-block;
+		font-family: "SegoeWP";
+		font-size: 36px;
+  		color: #015699;
+		margin: 0px 0px 10px 0px;
+		  span {
+			font-weight: 700;
+			color: #e45858;
+		  }
+		  @media (max-width: $md3+px) {
+			  margin: 0px 0px 10px 0px;
+		  }
+		  @media (max-width: 650px) {
+			  //margin: 0px 0px 0px 0px;
+			  font-size: 26px;
+		  }
+	}
+
+	// .price-book-info__sale-info
+
+	&__sale-info {
+		font-family: "SegoeWP";
+		font-size: 17px;
+  		color: #939292;
+		  padding: 0px 0px 0px 3px;
+		  @media (max-width: 650px) {
+			text-align: center;
+			margin: 0px 0px 10px 0px;
+		}
+	}
+
+	// .price-book-info__button
+
+	&__button {
+		cursor: pointer;
+		display: flex;
+		white-space: nowrap;
+		background-image: linear-gradient(to top, #79b260, #92d774);
+		font-family: "Helvetica";
+		font-weight: 700;
+		color: #fff;
+  		font-size: 24px;
+		padding: 12px 35px;
+		border-radius: 4px;
+		@media (min-width: $md2+px) {
+			&:hover {
+				background-image: linear-gradient(to top, #69a74e, #87ce69);
+			}
+		}
+		span {
+			font-size: 14px;
+			margin: 0px 5px;
+		}
+	}
+
+	// .price-book-info__pay
+
+	&__pay {
+		padding: 10px 0px 0px 0px;
+	}
+
+	// .price-book-info__pay-scure
+
+	&__pay-scure {
+		font-size: 13px;
+  		color: #939292;
+		position: relative;
+		padding: 0px 0px 0px 17px;
+		margin: 0px 0px 5px 9px;
+		&::before{
+			content: '';
+			position: absolute;
+			left: 0;
+			width: 14px;
+			height: 13px;
+			background: url('../assets/img/icons/lock.png') left no-repeat;
+		}
+	}
+
+	// .price-book-info__pay-list
+
+	&__pay-list {
+		display: flex;
+	}
+
+	// .price-book-info__pay-lik
+
+	&__pay-lik {
+		margin: 0px 0px 0px 10px;
+	}
+}

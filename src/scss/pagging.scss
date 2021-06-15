@@ -1,0 +1,33 @@
+.pagging {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	margin: 0px 25px;
+	// .pagging__arrow
+	&__arrow {
+	}
+	// .pagging__list
+	&__list {
+		display: flex;
+		li {
+			margin: 0 2px;
+			
+		}
+	}
+	// .pagging__item
+	&__item {
+		display: flex;
+		width: 24px;
+		height: 28px;
+		align-items: center;
+		justify-content: center;
+		color: #646464;
+		font-size: 16px;
+		font-weight: 300;
+		font-family: "Helvetica";
+		&._active {
+			border: 1px solid #dedede;
+			border-bottom: 4px solid #81bd66;
+		}
+	}
+}

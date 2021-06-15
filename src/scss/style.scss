@@ -1,0 +1,440 @@
+//<МИКСИНЫ>===============================================================================================
+@import "mixins";
+//</МИКСИНЫ>===============================================================================================
+
+//<ШРИФТЫ>===============================================================================================
+
+//<Подключаем шрифты>=======================================================================================
+//&display=swap&subset=cyrillic-ext
+@import "fonts";
+//</Подключаем шрифты>=======================================================================================
+
+//<Иконочные шрифты>==========================================================================================
+//@import "icons";
+//</Иконочные шрифты>==========================================================================================
+
+//<Шрифт по умолчанию>==========================================================================================
+$fontFamily: "SegoeWP";
+//</Шрифт по умолчанию>==========================================================================================
+
+//</ШРИФТЫ>=======================================================================================================
+
+//<ПЕРЕМЕННЫЕ>===========================================================================================================
+$minWidth: 320px;
+$maxWidth: 1920;
+$maxWidthContainer: 1020;
+$md1: $maxWidthContainer + 12;
+$md2: 991.98;
+$md3: 767.98;
+$md4: 479.98;
+//</ПЕРЕМЕННЫЕ>===========================================================================================================
+
+//<ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
+@import "null";
+body {
+	color: #000;
+	font-size: 14px;
+	&._lock {
+		overflow: hidden;
+	}
+}
+//</ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
+
+//<ОБОЛОЧКА>===========================================================================================================
+.wrapper {
+	width: 100%;
+	min-height: 100%;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	&._loaded {
+	}
+}
+//</ОБОЛОЧКА>===========================================================================================================
+
+//<ОСНОВНАЯ СЕТКА>===========================================================================================================
+._container {
+	max-width: $maxWidthContainer + px;
+	margin: 0 auto;
+	padding: 0 10px;
+	//overflow: hidden;
+}
+//</ОСНОВНАЯ СЕТКА>===========================================================================================================
+
+//<ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>====================================================================================================
+@import "forms";
+@import "ui";
+//</ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>====================================================================================================
+
+//<ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
+//@import "datepicker";
+//@import "lightgallery";
+@import "pagging";
+//@import "popup";
+@import "header";
+@import "footer";
+@import "home";
+@import "cart";
+@import "bookPage";
+//</ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
+
+//<ОСНОВНОЙ БЛОК>====================================================================================================
+.page {
+	flex: 1 1 auto;
+	
+}
+//===================================================================================================================================
+
+//</ОСНОВНОЙ БЛОК>====================================================================================================
+.categories {
+	padding: 0px 0px 0px 0px;
+	// .categories__header
+	&__header {
+		padding: 11px 18px;
+		@media (max-width: 860px) {
+			display: flex;
+			justify-content: space-between;
+			background-color: #79B260;
+		}
+	}
+	// .categories__title
+	&__title {
+		font-size: 24px;
+  		font-weight: 300;
+  		line-height: 1.25;
+  		color: #fff;
+		@media (min-width: 860px) {
+			color: #6b6969;
+		}
+	}
+	// .categories__burger
+	&__burger {
+	display: none;
+	@media (max-width: 860px) {
+		flex: 0 0 30px;
+		width: 30px;
+		height: 30px;
+		display: block;
+		position: relative;
+		cursor: pointer;
+		z-index: 5;
+		padding: 10px 6px;
+		span {
+			transition: all .3s ease 0s;
+			top: calc(50% - 1px);
+			left: 0px;
+			position: absolute;
+			width: 100%;
+			height: 2px;
+			background-color: #dedede;
+			&:first-child {
+				top: 5px;
+			}
+			&:last-child {
+				top: auto;
+				bottom: 5px;
+			}
+		}
+		&._active {
+			span {
+				transform: scale(0);
+				&:first-child {
+					transform: rotate(-45deg);
+					top: calc(50% - 1px);
+				}
+				&:last-child {
+					transform: rotate(45deg);
+					top: calc(50% - 1px);
+				}
+			}
+		}
+	}	
+}
+	// .categories__lines
+	&__lines {
+		//height: 16px;
+		//position: relative;
+	}
+	// .categories__body
+	&__body {
+		//display: none;
+		padding: 5px 0px 11px 0px;
+		@media (min-width: 860px) {
+			//display: block;
+			padding: 0px 0px 11px 0px;
+		}
+	}
+	// .categories__item
+	&__item {	
+	}
+}
+.item-category {
+	// .item-category__category
+	&__category {
+		cursor: pointer;
+		display: block;
+		font-size: 17px;
+		font-weight: 600;
+		line-height: 1.88;
+		color: #696969;
+		padding: 0 10px;
+		@media (min-width: $md2+px) {
+			&:hover {
+				background-image: linear-gradient(to top, #84cf64, #b0e798);
+				color: #fff;
+			}
+		}
+		&._active {
+			background-image: linear-gradient(to top, #79b260, #92d774);
+			color: #fff;
+		}
+	}
+	// .item-category__list
+	&__list {
+		li {
+			margin: 0px 0px 2px 0px;
+		}
+	}
+	// .item-category__link
+	&__link {
+		cursor: pointer;
+		display: block;
+		padding: 0px 23px;
+		width: 100%;
+		height: 100%;
+		font-size: 15px;
+		line-height: 1.7;
+		color: #555454;
+		position: relative;	
+		@media (min-width: 860px) {
+			&::after{
+				content: '';
+				position: absolute;
+				bottom: 0px;
+				left: 12.5%;
+				width: 75%;
+				height: 1px;
+				background-color: #dedede;
+			}
+		}
+		@media (min-width: $md2+px) {
+			&:hover {
+				background-image: linear-gradient(to top, #84cf64, #b0e798);
+				color: #fff;
+				&::after {
+					content: none;
+				}
+			}
+		}
+		&._active {
+			background-image: linear-gradient(to top, #79b260, #92d774);
+			color: #fff;
+			&::after {
+				content: none;
+			}
+		}
+	}
+}
+//=============================================================================
+.products {
+	height: 100%;
+	padding: 30px 0px 0 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	// .products__items
+	&__items {
+		display: flex;
+		flex-wrap: wrap;
+		@media (max-width: 500px) {
+			justify-content: center;
+		}
+	}
+	// .products__item
+	&__item {		
+		
+	}
+}
+.item-product {
+	cursor: pointer;
+	margin: 0 25px 30px 25px;
+	flex: 0 1 110px;
+	position: relative;	
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	transition: all .3s ease 0s;
+	@media (min-width: $md2+px) {
+		&:hover {
+			transform: scale(1.05);
+		}
+	}
+	// .item-product__body
+	&__body {	
+	}
+	// .item-product__sale
+	&__sale {
+		position: absolute;
+		z-index: 2;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		color: #fff;
+		font-size: 13px;
+		top: -5px;
+		right: -12px;
+		width: 50px;
+		height: 50px;
+		background-color: #f05356;
+		border-radius: 50%;
+		padding: 0 10px;
+		span {
+			display: inline-flex;
+			font-size: 19px;
+			font-weight: 700;
+		}
+	}
+	// .item-product__image
+	&__image {
+		flex: 0 0 160px;
+		width: 110px;
+		position: relative;
+		overflow: hidden;
+		margin: 0px 0px 5px 0px;
+		img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+	// .item-product__title
+	&__title {
+		flex:1 1 auto;
+		text-align: center;
+		font-size: 15px;
+  		font-weight: 400;
+		line-height: 1.07;
+		color: #595959;
+		margin: 0px 0px 10px 0px;	
+	}
+	// .item-product__price
+	&__price {
+		font-family: "Helvetica";
+		text-align: center;
+		font-size: 22px;
+  		line-height: 0.91;
+ 		color: #f05356;
+		 font-weight: 400;
+	}
+}
+//=============================================================================
+.category-page {
+	border: 1px solid #dedede;
+	
+	// .category-page__title
+
+	&__title {
+		padding: 18px 33px 0 33px;
+  		font-size: 24px;
+  		font-weight: 300;
+		font-style: normal;
+		line-height: 1.25;
+		color: #464646;
+	}
+
+	// .category-page__item
+
+	&__item {
+		flex: 1 1 auto;
+	}
+}
+
+//popup-learn
+.popup-learn {
+	margin: 20px 0;
+	
+}
+.popup-learn__content {
+	
+}
+.popup-learn__body {
+	display: inline-flex;
+}
+.popup-learn__link{
+	display: inline-flex;
+	position: relative;
+	margin: 0px 0px 20px 0px;
+	span {
+		display: inline-block;
+		margin: 0px 30px 0px 0px;
+		font-size: 20px;
+	}
+
+}
+.popup-learn__block {
+	position: absolute;
+	z-index: 5;
+	background-color: #fff;
+	top: 30px;
+	left: 160px;
+	width: 150px;
+	border: 1px solid rgb(247, 202, 5);
+	ul {
+		margin: 10px;
+	}
+	li {
+		margin: 0px 0px 10px 0px;
+		font-size: 18px;
+		cursor: pointer;
+		&:last-child {
+			margin: 0px 0px 0px 0px;
+		}
+		&._active {
+			font-weight: 900;
+		}
+	}
+}
+.link {
+	cursor: pointer;
+	display: inline-block;
+	border-bottom: 1px dotted #000;
+	color: rgb(240, 99, 6);
+	font-size: 20px;
+}
+
+
+//=====================
+.test-block {
+	margin: 10px 0px;
+	display: flex;
+	justify-content: center;
+	
+}
+.test-list {
+margin: 20px 0px 0px 0px;
+display: flex;
+justify-content: center;
+
+li {
+	cursor: pointer;
+	margin: 0px 5px;
+	padding: 5px 5px;
+	color: #fff;
+	font-size: 16px;
+}
+}
+.test-li {
+	background-color: #3f3f3f;
+	
+	&.active {
+		background-color: #ce8b8b;
+	}
+	&.disabled {
+		opacity: 0.3;
+		pointer-events: none;
+	}
+}
