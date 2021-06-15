@@ -16,7 +16,7 @@ const categoryItems = [
 	'Health',
 	'Mathematics',
 	'Medical',
-	'Reference',
+	'References',
 	'Science'
 ];
 
